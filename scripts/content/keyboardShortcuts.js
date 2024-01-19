@@ -118,16 +118,6 @@ function registerShortkeys() {
     const { settings } = result;
     const autoSync = typeof settings?.autoSync === 'undefined' || settings?.autoSync;
     document.addEventListener('keydown', (e) => {
-      if (autoSync && (e.metaKey || (isWindows() && e.ctrlKey))) {
-        if (e.key === 'f' || e.key === 'F') {
-          const searchbox = document.querySelector('#conversation-search');
-          if (searchbox && searchbox !== document.activeElement) {
-            searchbox.scrollIntoView();
-            searchbox.focus();
-            e.preventDefault();
-          }
-        }
-      }
       // esc
       if (e.keyCode === 27) {
         if (document.querySelector('[id*=close-button]')) {
